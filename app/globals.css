@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #423738; /* Dark brown/charcoal */
+  --foreground: #f4e2d1; /* Very light cream for text */
+  --card: #987185; /* Muted purple/mauve for cards */
+  --card-foreground: #f4e2d1; /* Light cream text on cards */
+  --popover: #987185; /* Muted purple */
+  --popover-foreground: #f4e2d1; /* Light cream */
+  --primary: #423738; /* Dark brown */
+  --primary-foreground: #f4e2d1; /* Light cream */
+  --secondary: #e0d5b7; /* Light cream/beige */
+  --secondary-foreground: #423738; /* Dark brown text */
+  --muted: #d6aa6f; /* Warm beige/tan */
+  --muted-foreground: #423738; /* Dark brown text */
+  --accent: #d6aa6f; /* Warm beige/tan as accent */
+  --accent-foreground: #423738; /* Dark brown text on accent */
+  --destructive: #987185; /* Muted purple for destructive actions */
+  --destructive-foreground: #f4e2d1; /* Light cream */
+  --border: #987185; /* Muted purple borders */
+  --input: #423738; /* Dark brown inputs */
+  --ring: rgba(214, 170, 111, 0.5); /* Warm beige ring with opacity */
+  --chart-1: #d6aa6f; /* Warm beige */
+  --chart-2: #987185; /* Muted purple */
+  --chart-3: #e0d5b7; /* Light cream */
+  --chart-4: #423738; /* Dark brown */
+  --chart-5: #f4e2d1; /* Very light cream */
+  --radius: 0.5rem;
+  --sidebar: #987185; /* Muted purple */
+  --sidebar-foreground: #f4e2d1; /* Light cream */
+  --sidebar-primary: #423738; /* Dark brown */
+  --sidebar-primary-foreground: #f4e2d1; /* Light cream */
+  --sidebar-accent: #d6aa6f; /* Warm beige */
+  --sidebar-accent-foreground: #423738; /* Dark brown */
+  --sidebar-border: #987185; /* Muted purple */
+  --sidebar-ring: rgba(214, 170, 111, 0.5); /* Warm beige ring */
+  --font-playfair: "Playfair Display", serif;
+  --font-source-sans: "Source Sans Pro", sans-serif;
+}
+
+.dark {
+  /* Removed duplicate dark theme tokens since we're using dark theme as default */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-playfair: var(--font-playfair);
+  --font-source-sans: var(--font-source-sans);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-playfair);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added custom styles for playful backend theme */
+  .glow-on-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(214, 170, 111, 0.3);
+  }
+
+  .terminal-cursor::after {
+    content: "_";
+    animation: blink 1s infinite;
+    color: #d6aa6f; /* Warm beige cursor */
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Particle canvas styling */
+  canvas {
+    mix-blend-mode: screen;
+  }
+}
