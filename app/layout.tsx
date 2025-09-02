@@ -1,26 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Source_Sans_3 } from "next/font/google"
+import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
-const playfairDisplay = Playfair_Display({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "700"],
-})
-
-const sourceSans = Source_Sans_3({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-source-sans",
-  weight: ["400", "600"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
   title: "Samarth Mahapatra | Backend Developer",
   description:
-    "Portfolio of Samarth Mahapatra - Backend Developer building products for 60k+ users",
+    "Terminal-style portfolio of Samarth Mahapatra - Backend Developer building scalable systems",
   generator: "v0.app",
 }
 
@@ -30,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${sourceSans.variable} antialiased`}>
-      <body className="font-sans">{children}</body>
+    <html lang="en" className={`${jetbrainsMono.variable} antialiased`}>
+      <body className="font-mono bg-background text-foreground">{children}</body>
     </html>
   )
 }
