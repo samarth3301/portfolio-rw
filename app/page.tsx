@@ -133,9 +133,6 @@ export default function Portfolio() {
       </nav>
 
       {/* Left side indicator */}
-      <div className="hidden md:block fixed left-0 top-1/2 -translate-y-1/2 w-12 bg-muted text-muted-foreground text-xs writing-mode-vertical text-center py-4 z-40">
-        Website
-      </div>
 
       {/* Main content */}
       <main className="flex items-center justify-center min-h-screen px-4 md:px-6">
@@ -242,41 +239,18 @@ export default function Portfolio() {
             {/* Right content - Profile picture */}
             <div className="lg:col-span-1 flex items-center justify-center lg:justify-end">
               <div className="relative group">
-                {/* Profile picture container */}
-                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80">
-                  {/* Animated border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent via-purple-500 to-accent rounded-full animate-spin opacity-75 group-hover:opacity-100 transition-opacity duration-300" style={{ animationDuration: '3s' }}></div>
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-2xl overflow-hidden border-2 border-accent/30 bg-gradient-to-br from-accent/10 to-purple-500/10 hover:border-accent/50 transition-all duration-300">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                    alt="Samarth Mahapatra - Profile"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
 
-                  {/* Inner container */}
-                  <div className="absolute inset-2 bg-background rounded-full overflow-hidden border-2 border-card">
-                    {/* Placeholder for profile picture */}
-                    <div className="w-full h-full bg-gradient-to-br from-accent/20 to-purple-500/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 md:w-20 md:h-20 bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl md:text-3xl font-bold text-accent">SM</span>
-                        </div>
-                        <p className="text-muted-foreground text-sm">
-                          Profile Picture
-                        </p>
-                        <p className="text-xs text-muted-foreground/70 mt-1">
-                          Coming Soon
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Uncomment and replace with your actual image */}
-                    {/* 
-                    <img 
-                      src="/your-profile-picture.jpg" 
-                      alt="Samarth Mahapatra" 
-                      className="w-full h-full object-cover"
-                    />
-                    */}
+                  {/* Status indicator */}
+                  <div className="absolute top-4 right-4 flex items-center gap-2 bg-background/80 backdrop-blur-sm rounded-full px-3 py-1">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-foreground">Available</span>
                   </div>
-
-                  {/* Floating elements */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
                 </div>
               </div>
             </div>
