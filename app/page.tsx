@@ -139,7 +139,7 @@ export default function Portfolio() {
 
       {/* Main content */}
       <main className="flex items-center justify-center min-h-screen px-4 md:px-6">
-        <div className="max-w-4xl text-left w-full">
+        <div className="max-w-6xl mx-auto text-left w-full">
           {/* Terminal prompt */}
           <div className="mb-6 md:mb-8">
             <span className="text-accent text-base md:text-lg">&gt;</span>
@@ -148,94 +148,139 @@ export default function Portfolio() {
             </span>
           </div>
 
-          {/* Main heading */}
-          <div className="mb-6 md:mb-8">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 md:mb-4">
-              <span className="text-foreground">samarth</span>
-              <span className="text-accent">.dev()</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-2">
-              Samarth Mahapatra
-            </p>
-            <p className="text-accent text-base md:text-lg">
-              Backend Developer, DevOps Engineer & CTO @ Techsolace
-            </p>
-          </div>
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-3">
+            {/* Left content - Main info */}
+            <div className="lg:col-span-2">
+              {/* Main heading */}
+              <div className="mb-6 md:mb-8">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 md:mb-4">
+                  <span className="text-foreground">samarth</span>
+                  <span className="text-accent">.dev()</span>
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground mb-2">
+                  Samarth Mahapatra
+                </p>
+                <p className="text-accent text-base md:text-lg">
+                  Backend Developer, DevOps Engineer & CTO @ Techsolace
+                </p>
+              </div>
 
-          {/* Description */}
-          <div className="mb-6 md:mb-8 text-muted-foreground max-w-2xl">
-            <p className="text-base md:text-lg leading-relaxed mb-4">
-              Building scalable systems and products for{" "}
-              <span className="text-accent font-semibold">50k+ users</span>.
-            </p>
-            <p className="mb-4 md:mb-6 text-sm md:text-base">
-              I specialize in backend architecture, system designs and
-              scalability.
-            </p>
+              {/* Description */}
+              <div className="mb-6 md:mb-8 text-muted-foreground">
+                <p className="text-base md:text-lg leading-relaxed mb-4">
+                  Building scalable systems and products for{" "}
+                  <span className="text-accent font-semibold">50k+ users</span>.
+                </p>
+                <p className="mb-4 md:mb-6 text-sm md:text-base">
+                  I specialize in backend architecture, system designs and
+                  scalability.
+                </p>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-accent">
-                  2+
+                {/* Quick stats */}
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
+                  <div className="text-center">
+                    <div className="text-xl md:text-2xl font-bold text-accent">
+                      2+
+                    </div>
+                    <div className="text-xs md:text-sm text-muted-foreground">
+                      Companies
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xl md:text-2xl font-bold text-accent">
+                      100k+
+                    </div>
+                    <div className="text-xs md:text-sm text-muted-foreground">
+                      Users
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xl md:text-2xl font-bold text-accent">
+                      2025
+                    </div>
+                    <div className="text-xs md:text-sm text-muted-foreground">
+                      Active
+                    </div>
+                  </div>
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">
-                  Companies
+
+                {/* Current status */}
+                <div className="flex items-center gap-2 mb-4 md:mb-6">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-xs md:text-sm">
+                    Available for new projects
+                  </span>
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-accent">
-                  100k+
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground">
-                  Users
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-accent">
-                  2025
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground">
-                  Active
-                </div>
+
+              {/* CTA buttons */}
+              <div className="flex gap-3 md:gap-4 mb-6 md:mb-8 flex-wrap">
+                <a
+                  href="#work"
+                  className="btn text-sm md:text-base"
+                  onClick={(e) => handleNavClick(e, "#work")}
+                >
+                  View My Work
+                </a>
+                <a
+                  href="#contact"
+                  className="btn-outline text-sm md:text-base"
+                  onClick={(e) => handleNavClick(e, "#contact")}
+                >
+                  Let's Talk
+                </a>
+                <a
+                  href="mailto:samarplayz1337@gmail.com"
+                  className="nav-item flex items-center gap-2 text-sm md:text-base"
+                >
+                  <Mail className="w-3 h-3 md:w-4 md:h-4" />
+                  Quick Email
+                </a>
               </div>
             </div>
 
-            {/* Current status */}
-            <div className="flex items-center gap-2 mb-4 md:mb-6">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs md:text-sm">
-                Available for new projects
-              </span>
+            {/* Right content - Profile picture */}
+            <div className="lg:col-span-1 flex items-center justify-center lg:justify-end">
+              <div className="relative group">
+                {/* Profile picture container */}
+                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80">
+                  {/* Animated border */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent via-purple-500 to-accent rounded-full animate-spin opacity-75 group-hover:opacity-100 transition-opacity duration-300" style={{ animationDuration: '3s' }}></div>
+
+                  {/* Inner container */}
+                  <div className="absolute inset-2 bg-background rounded-full overflow-hidden border-2 border-card">
+                    {/* Placeholder for profile picture */}
+                    <div className="w-full h-full bg-gradient-to-br from-accent/20 to-purple-500/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl md:text-3xl font-bold text-accent">SM</span>
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          Profile Picture
+                        </p>
+                        <p className="text-xs text-muted-foreground/70 mt-1">
+                          Coming Soon
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Uncomment and replace with your actual image */}
+                    {/* 
+                    <img 
+                      src="/your-profile-picture.jpg" 
+                      alt="Samarth Mahapatra" 
+                      className="w-full h-full object-cover"
+                    />
+                    */}
+                  </div>
+
+                  {/* Floating elements */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* CTA buttons */}
-          <div className="flex gap-3 md:gap-4 mb-6 md:mb-8 flex-wrap">
-            <a
-              href="#work"
-              className="btn text-sm md:text-base"
-              onClick={(e) => handleNavClick(e, "#work")}
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="btn-outline text-sm md:text-base"
-              onClick={(e) => handleNavClick(e, "#contact")}
-            >
-              Let's Talk
-            </a>
-            <a
-              href="mailto:samarplayz1337@gmail.com"
-              className="nav-item flex items-center gap-2 text-sm md:text-base"
-            >
-              <Mail className="w-3 h-3 md:w-4 md:h-4" />
-              Quick Email
-            </a>
-          </div>
-
-          {/* Cursor */}
         </div>
       </main>
 
@@ -277,12 +322,12 @@ export default function Portfolio() {
                     <ExternalLink className="w-5 h-5 text-accent group-hover:rotate-12 transition-transform" />
                   </a>
                 </div>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Leading technical strategy and system architecture for products serving 50k+ users. 
+                  Leading technical strategy and system architecture for products serving 50k+ users.
                   Managing engineering teams and overseeing full-stack delivery from concept to production.
                 </p>
-                
+
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -297,7 +342,7 @@ export default function Portfolio() {
                     <span className="text-muted-foreground">Scalable Infrastructure</span>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {["TypeScript", "Python", "Docker", "AWS", "Kubernetes"].map((tech) => (
                     <span key={tech} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-mono border border-accent/20 hover:bg-accent/20 transition-colors">
@@ -326,12 +371,12 @@ export default function Portfolio() {
                     <span className="text-emerald-400 font-bold text-sm">10+</span>
                   </div>
                 </div>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Built ecommerce platforms, real-time chat systems, and upgraded infrastructure for multiple startups. 
+                  Built ecommerce platforms, real-time chat systems, and upgraded infrastructure for multiple startups.
                   Specialized in full-stack development and system optimization for growing businesses.
                 </p>
-                
+
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
@@ -346,7 +391,7 @@ export default function Portfolio() {
                     <span className="text-muted-foreground">Infrastructure Upgrades</span>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {["Node.js", "React", "MongoDB", "WebSocket", "Redis"].map((tech) => (
                     <span key={tech} className="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-mono border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors">
@@ -358,16 +403,11 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Terminal cursor */}
-          <div className="flex items-center mt-8">
-            <span className="text-accent text-base md:text-lg">&gt;</span>
-            <div className="cursor ml-1"></div>
-          </div>
         </div>
       </section>
 
       {/* About section */}
-            {/* About section */}
+      {/* About section */}
       <section ref={addToRefs} id="about" className="min-h-screen flex items-center justify-center px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-6xl mx-auto text-left w-full">
           {/* Terminal prompt */}
@@ -395,14 +435,14 @@ export default function Portfolio() {
                       Hey, I'm Samarth — a backend and DevOps developer who loves solving hard system-level problems.
                     </p>
                     <p>
-                      Currently serving as <span className="text-accent font-semibold">CTO @ Techsolace</span> where I build and scale products. 
+                      Currently serving as <span className="text-accent font-semibold">CTO @ Techsolace</span> where I build and scale products.
                     </p>
                     <p>
-                      Freelance engineer for startups like <span className="text-foreground">Plentycred</span>, <span className="text-foreground">MarutiBakers</span>, 
+                      Freelance engineer for startups like <span className="text-foreground">Plentycred</span>, <span className="text-foreground">MarutiBakers</span>,
                       <span className="text-foreground">QuickOPD</span>, and <span className="text-foreground">Grave</span>.
                     </p>
                     <p>
-                      I enjoy working where clean code meets product impact: optimizing DB queries to millisecond-level, 
+                      I enjoy working where clean code meets product impact: optimizing DB queries to millisecond-level,
                       designing distributed systems for scale, and deploying production-ready infrastructure with Docker/Kubernetes.
                     </p>
                   </div>
@@ -441,7 +481,7 @@ export default function Portfolio() {
                   </h4>
                   <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
                     {[
-                      "Docker", "Kubernetes", "AWS", "Redis", 
+                      "Docker", "Kubernetes", "AWS", "Redis",
                       "PostgreSQL", "MongoDB", "GraphQL", "REST APIs",
                       "Kafka", "Prisma", "Firebase", "Vercel"
                     ].map((tool) => (
@@ -516,11 +556,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Terminal cursor */}
-          <div className="flex items-center mt-8">
-            <span className="text-accent text-base md:text-lg">&gt;</span>
-            <div className="cursor ml-1"></div>
-          </div>
         </div>
       </section>
 
@@ -547,16 +582,16 @@ export default function Portfolio() {
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p className="text-base md:text-lg">
-                    I'm always excited to work on interesting projects and collaborate with talented people. 
+                    I'm always excited to work on interesting projects and collaborate with talented people.
                     Whether you have a startup idea, need technical consultation, or want to discuss potential opportunities, I'd love to hear from you.
                   </p>
-                  
+
                   <div>
                     <p className="text-foreground font-semibold mb-3">I'm particularly interested in:</p>
                     <div className="grid grid-cols-1 gap-2">
                       {[
                         "Backend architecture and system design",
-                        "Scalable product development", 
+                        "Scalable product development",
                         "Early-stage startup technical leadership",
                         "Open source contributions",
                         "Technical writing and mentorship"
@@ -600,7 +635,7 @@ export default function Portfolio() {
                 <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                 Get In Touch
               </h3>
-              
+
               <div className="space-y-6">
                 {/* Email Card */}
                 <div className="group relative overflow-hidden border border-border rounded-xl bg-gradient-to-br from-card to-card/50 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-accent/50">
@@ -675,11 +710,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Terminal cursor */}
-          <div className="flex items-center mt-8">
-            <span className="text-accent text-base md:text-lg">&gt;</span>
-            <div className="cursor ml-1"></div>
-          </div>
         </div>
       </section>
 
